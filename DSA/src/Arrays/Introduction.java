@@ -1,23 +1,24 @@
 package Arrays;
 
 public class Introduction {
-    public int findMaxConsecutiveOnes(int[] nums){
-        int count =0;
-        int res= 0;
-
-        for(int i=1; i< nums.length; i++){
-            if(nums[res]==1){
-                if(nums[res]== nums[i]){
-                    count++;
-                    res++;
-                }
-            }else{
-                res++;
-                count=0;
+    public static int findMaxConsecutiveOnes(int[] nums) {
+        int count1 = 0;
+        int count2 = 0;
+        for(int i=0; i< nums.length; i++){
+            if(nums[i] == 1){
+                count1 = count1 + 1;
+            }else {
+                count2 = Math.max(count2,count1);
+                count1 =0;
             }
         }
+        return Math.max(count2,count1);
+    }
 
-        return count;
+    public static void main(String[] args) {
+        int[] nums ={1,0,1,1,0,1};
+
+        System.out.println(findMaxConsecutiveOnes(nums));
     }
 
 }
