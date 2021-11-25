@@ -1,5 +1,7 @@
 package Arrays;
 
+import java.util.Arrays;
+
 public class Introduction {
     public static int findMaxConsecutiveOnes(int[] nums) {
         int count1 = 0;
@@ -32,9 +34,18 @@ public class Introduction {
             }
 
         }
-
         return c;
+    }
 
+    public int[] sortedSquares(int[] nums) {
+        int[] arr = new int[nums.length];
+
+        for (int i=0; i<= nums.length; i++){
+            arr[i] = nums[i] * nums[i];
+        }
+
+        Arrays.sort(arr);
+        return arr;
     }
 
 
