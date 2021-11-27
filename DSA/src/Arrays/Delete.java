@@ -26,7 +26,6 @@ public class Delete {
                 nums[j] = nums[i];
             }
         }
-
         return j+1;
     }
 
