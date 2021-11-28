@@ -17,7 +17,6 @@ public class DayTwo {
 
             map.put(nums[i], i);
         }
-
         return res;
 
     }
