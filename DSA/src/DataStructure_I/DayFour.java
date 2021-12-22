@@ -1,5 +1,7 @@
 package DataStructure_I;
 
+import java.util.Arrays;
+
 public class DayFour {
 
     public static int largestElement(int[] arr){
@@ -48,10 +50,26 @@ public class DayFour {
         return flag;
     }
 
+    public static void reverseArray(int[] arr){
+        int start=0;
+        int end=arr.length-1;
+        int temp=0;
+
+        while(start<end){
+            temp= arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            start++;
+            end--;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
 
 
     public static void main(String[] args) {
-        int[] arr= {1,1,1,0};
-        System.out.println(sorted(arr));
+        int[] arr= {1,2,3,4,5};
+        reverseArray(arr);
     }
 }
