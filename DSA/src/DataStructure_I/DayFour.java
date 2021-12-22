@@ -33,10 +33,25 @@ public class DayFour {
 
     }
 
+    public static boolean sorted(int[] arr){
+        int index=0;
+        boolean flag= true;
+        for(int i=1; i<arr.length; i++){
+            if(arr[i] > arr[index] || arr[i] == arr[index]) {
+                index++;
+                continue;
+            }else{
+                return false;
+            }
+        }
+
+        return flag;
+    }
+
 
 
     public static void main(String[] args) {
-        int[] arr= {1,5,2,6,7,10,5,3};
-        System.out.println(secondLargestElement(arr));
+        int[] arr= {1,1,1,0};
+        System.out.println(sorted(arr));
     }
 }
