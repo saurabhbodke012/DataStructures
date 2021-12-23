@@ -51,7 +51,7 @@ public class DayFour {
         return flag;
     }
 
-    public static void reverseArray(int[] arr){
+    public static int[] reverseArray(int[] arr){
         int start=0;
         int end=arr.length-1;
         int temp=0;
@@ -64,7 +64,8 @@ public class DayFour {
             start++;
             end--;
         }
-        System.out.println(Arrays.toString(arr));
+
+        return arr;
     }
 
     public static void removeDuplicates(int[] arr){
