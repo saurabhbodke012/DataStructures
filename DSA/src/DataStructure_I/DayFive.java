@@ -43,11 +43,54 @@ public class DayFive {
     }
 
     public static void leadersArray(int[] arr){
+        int leader = arr[arr.length-1];
+        System.out.println(leader);
+        for(int i=arr.length-2; i>=0; i--){
+
+            if(leader < arr[i]) {
+                leader = arr[i];
+                System.out.println(leader);
+            }
+
+        }
+    }
+
+    public static void maxDifference(int[] arr){
+       int res = arr[0] - arr[1];
+       int minVal = arr[0];
+
+       for(int j=1; j<arr.length; j++){
+           res = Math.max(res, arr[j] - minVal);
+           minVal = Math.min(minVal, arr[j]);
+       }
+
+        System.out.println(res);
+    }
+
+    public static void frequency(int[] arr){
+
+        int count =1;
+        int index=0;
+        for(int i=1; i<arr.length; i++){
+
+            if(arr[index] != arr[i] ){
+                System.out.println("Element: " + arr[index] + " has appeared " + count + " times.");
+                count=1;
+                index++;
+            }else{
+                count++;
+                index++;
+            }
+
+            if(i==arr.length -1){
+                System.out.println("Element: " + arr[index] + " has appeared " + count + " times.");
+            }
+        }
 
     }
 
     public static void main(String[] args) {
-        int[] arr= {1,2,3,4,5};
-        leftRotateArrayByD(arr,2);
+        int[] arr= {10,10,10,20,20,30};
+        frequency(arr);
     }
 }
