@@ -1,6 +1,8 @@
 package DataStructure_I;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class DayFive {
 
@@ -86,11 +88,56 @@ public class DayFive {
                 System.out.println("Element: " + arr[index] + " has appeared " + count + " times.");
             }
         }
+    }
 
+    public static void stock(int[] arr){
+        int res = arr[0] - arr[1];
+        int minVal = arr[0];
+        int profit=0;
+        for(int j=1; j<arr.length; j++){
+            res = Math.max(res, arr[j] - minVal);
+            minVal = Math.min(minVal, arr[j]);
+
+        }
+    }
+
+    public static List<Integer> numberOfItems(String s, List<Integer> startIndices, List<Integer> endIndices) {
+        String items = "";
+        List<Integer> itemList = new ArrayList<>();
+        for(int i=0;i<Math.min(startIndices.size(), endIndices.size());i++) {
+            items = s.substring(startIndices.get(i)-1,endIndices.get(i));
+            char[] itemChars = items.toCharArray();
+            int pair = 0;
+            int compCount = 0;
+            int cumComCount = 0;
+            for(char itemChar: itemChars) {
+                if(itemChar == '|' && pair == 0) {
+                    pair++;
+                    compCount = 0;
+                } else if(itemChar == '|' && pair == 1) {
+                    if(compCount>0) {
+                        cumComCount += compCount;
+                    }
+                    compCount = 0;
+                } else if(itemChar == '*' && pair == 1) {
+                    compCount += 1;
+                }
+            }
+            itemList.add(cumComCount);
+        }
+        return itemList;
     }
 
     public static void main(String[] args) {
-        int[] arr= {10,10,10,20,20,30};
-        frequency(arr);
+        String s= "*|*|*|";
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(1);
+
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(1);
+        list2.add(6);
+        System.out.println(numberOfItems(s,list,list2));
+
     }
 }
