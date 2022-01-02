@@ -48,6 +48,8 @@ public class DayEight {
             }
         }
 
+        matrixBoundaryTraversal(arr, R-2, C-2);
+
     }
 
     public static int[][] transpose(int[][] mat){
