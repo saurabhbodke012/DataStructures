@@ -1,6 +1,4 @@
-package DataStructure_I;
-
-import java.util.Arrays;
+package DataStructure_Jan22;
 
 public class DayEight {
 

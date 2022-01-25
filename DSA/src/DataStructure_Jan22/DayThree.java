@@ -1,7 +1,6 @@
-package DataStructure_I;
+package DataStructure_Jan22;
 
 import java.util.Arrays;
-import java.util.TreeSet;
 
 public class DayThree {
     public static void sortColors(int[] nums) {

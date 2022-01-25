@@ -1,6 +1,4 @@
-package DataStructure_I;
-
-import java.util.HashMap;
+package DataStructure_Jan22;
 
 public class DaySeven {
 

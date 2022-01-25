@@ -1,4 +1,4 @@
-package DataStructure_I;
+package DataStructure_Jan22;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -1,4 +1,4 @@
-package DataStructure_I;
+package DataStructure_Jan22;
 
 public class DaySix {
 
