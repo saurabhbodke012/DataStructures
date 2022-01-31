@@ -29,7 +29,7 @@ public class Jan24 {
         }
 
         System.out.println(n);
-        reversePrint(gin-1);
+        reversePrint(n-1);
 
     }
 
