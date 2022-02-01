@@ -13,6 +13,8 @@ public class Jan31 {
         }
     }
 
+    private static int maxLevel=0;
+
     public static int maximumTree(Node root){
 
         if(root == null){
@@ -23,6 +25,20 @@ public class Jan31 {
 
     }
 
+    public static void leftView(Node root, int level){
+
+        if(root ==  null){
+            return;
+        }
+
+        if(maxLevel< level){
+            System.out.print(root.key + " ");
+            maxLevel= level;
+        }
+        leftView(root.left, level+1);
+        leftView(root.right, level+1);
+    }
+
     public static void main(String[] args) {
         Node root=new Node(20);
         root.left=new Node(8);
@@ -30,8 +46,9 @@ public class Jan31 {
         root.left.left=new Node(24);
         root.left.right=new Node(4);
         root.right.right=new Node(12);
+        root.right.left= new Node(30);
 
-        System.out.println(maximumTree(root));
-
+//        System.out.println(maximumTree(root));
+        leftView(root,1);
     }
 }
