@@ -56,7 +56,6 @@ public class June1st {
         if(n<=9){
             return n;
         }
-
         return n%10 + sum(n/10);
     }
 
