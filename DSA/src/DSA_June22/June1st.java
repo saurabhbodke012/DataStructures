@@ -25,8 +25,14 @@ public class June1st {
         if(n==0 || n==1){
             return 1;
         }
-
         return n*factorial(n-1);
+    }
+
+    public static int fibonacci(int n){
+       if(n<=1){
+           return n;
+       }
+        return fibonacci(n-1)+fibonacci(n-2);
     }
 
 
@@ -34,6 +40,7 @@ public class June1st {
 
 //        NtoOne(5);
 //        OnetoN(5);
-        System.out.println(factorial(3));
+//        System.out.println(factorial(3));
+        System.out.println(fibonacci(3));
     }
 }
