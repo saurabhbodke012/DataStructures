@@ -52,6 +52,14 @@ public class June1st {
         return b;
     }
 
+    public static int sum(int n){
+        if(n<=9){
+            return n;
+        }
+
+        return n%10 + sum(n/10);
+    }
+
 
     public static void main(String[] args) {
 
@@ -61,6 +69,7 @@ public class June1st {
 //        System.out.println(fibonacci(3));
 //        System.out.println(getSum(2));
 //        System.out.println(palindrome("abba",0,3));
+        System.out.println(sum(253));
     }
 
 }
