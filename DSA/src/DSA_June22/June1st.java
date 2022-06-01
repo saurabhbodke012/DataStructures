@@ -7,15 +7,24 @@ public class June1st {
         if(n==0){
             return;
         }
-
         System.out.println(n);
         NtoOne(n-1);
+    }
+
+    public static void OnetoN (int n){
+
+        if(n==0){
+            return;
+        }
+
+        OnetoN(n-1);
+        System.out.println(n);
     }
 
 
     public static void main(String[] args) {
 
-        NtoOne(5);
-
+//        NtoOne(5);
+        OnetoN(5);
     }
 }
