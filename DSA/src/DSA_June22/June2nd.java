@@ -1,12 +1,21 @@
 package DSA_June22;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 /**
  * Topic: Recursion
  */
 
 public class June2nd {
+
+    public class ListNode {
+      int val;
+      ListNode next;
+      ListNode() {}
+      ListNode(int val) { this.val = val; }
+      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+  }
 
     public static void reverseString(char[] s) {
         helper(s, 0, s.length-1);
@@ -24,6 +33,21 @@ public class June2nd {
         s[end]= temp;
 
         helper(s, start+1, end-1);
+    }
+
+    public static ListNode swapPairs(ListNode head) {
+        if( (head== null) || (head.next== null)){
+            return head;
+        }
+
+        ListNode firstNode= head;
+        ListNode secondNode= head.next;
+
+        firstNode.next = swapPairs(secondNode.next);
+        secondNode.next= firstNode;
+
+        return secondNode;
+
     }
 
 
