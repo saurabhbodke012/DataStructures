@@ -60,6 +60,37 @@ public class June1st {
     }
 
 
+    public static int ropecutting(int n, int a , int b, int c){
+        if(n<0){
+            return -1;
+        }
+        if(n==0){
+            return 0;
+        }
+
+        int result= Math.max(ropecutting(n-a, a,b,c),
+                Math.max(ropecutting(n-b,a,b,c), ropecutting(n-c,a,b,c)));
+
+        if(result==-1){
+            return -1;
+        }
+
+        return result+1;
+    }
+
+
+    public static void subsets(String s, String current, int index){
+        if(index== s.length()){
+            System.out.println(current);
+            return;
+        }
+
+        subsets(s, current, index+1);
+        subsets(s, current + s.charAt(index), index+1);
+
+    }
+
+
     public static void main(String[] args) {
 
 //        NtoOne(5);
@@ -68,7 +99,9 @@ public class June1st {
 //        System.out.println(fibonacci(3));
 //        System.out.println(getSum(2));
 //        System.out.println(palindrome("abba",0,3));
-        System.out.println(sum(253));
+//        System.out.println(sum(253));
+//        System.out.println(ropecutting(23,11,9,12));
+        subsets("ABC", "", 0);
     }
 
 }
