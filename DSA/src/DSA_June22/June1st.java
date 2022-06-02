@@ -1,5 +1,8 @@
 package DSA_June22;
 
+/**
+ * Topic: Recursion
+ */
 public class June1st {
 
     public static void NtoOne (int n){
