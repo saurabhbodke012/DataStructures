@@ -17,5 +17,23 @@ public class June3rd {
         return previous;
     }
 
+    public static June2nd.ListNode reverseListRecurssion(June2nd.ListNode head) {
+
+        if (head==null){
+            return null;
+        }
+
+        June2nd.ListNode newHead= head;
+
+        if(head.next != null){
+            newHead =  reverseListRecurssion(head.next);
+            head.next.next = head;
+        }
+        head.next = null;
+
+        return newHead;
+
+    }
+
 
 }
